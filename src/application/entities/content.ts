@@ -1,5 +1,6 @@
 export class Content {
   private readonly content: string;
+  static value: Content;
 
   get value() {
     return this.content;

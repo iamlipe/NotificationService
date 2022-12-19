@@ -1,14 +1,12 @@
-import { SendNotificationUseCase } from './sendNotificationUseCase';
+import { SendNotification } from './sendNotification';
 import { InMemoryNotificationRepository } from '../../../test/repositories/inMemoryNotificationRepository';
 import { randomUUID } from 'crypto';
 
-describe('SendNotificationUseCase', () => {
+describe('SendNotification', () => {
   it('should be able to send a notification', async () => {
     const notificationRepository = new InMemoryNotificationRepository();
 
-    const sendNotification = new SendNotificationUseCase(
-      notificationRepository,
-    );
+    const sendNotification = new SendNotification(notificationRepository);
 
     const { notification } = await sendNotification.execute({
       recipientId: randomUUID(),
