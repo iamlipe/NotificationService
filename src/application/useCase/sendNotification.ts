@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { Content } from '../entities/content';
 import { Notification } from '../entities/notifications';
 import { NotificationRepository } from '../repositories/notificationRepository';
-import { randomUUID } from 'crypto';
 
 export interface SendNotificationResquest {
   recipientId: string;
